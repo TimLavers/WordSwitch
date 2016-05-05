@@ -1,7 +1,7 @@
 package howtoprogram.anagrams.test;
 
 
-import howtoprogram.anagrams.FileBasedDictionary;
+import howtoprogram.anagrams.Dictionary;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,11 +10,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Set;
 
-public class FileBasedDictionaryTest {
+public class DictionaryTest {
     @Test
     public void allWordsTest() throws IOException {
         Path path = Paths.get("src/test/resources/books/FiveWords.txt");
-        FileBasedDictionary dictionary = new FileBasedDictionary(path);
+        Dictionary dictionary = new Dictionary(path);
         Set<String> set = dictionary.allWords();
         Assert.assertTrue(set.contains("aardvark"));
         Assert.assertTrue(set.contains("bat"));
@@ -28,7 +28,7 @@ public class FileBasedDictionaryTest {
     @Test
     public void containsTest() throws IOException {
         Path path = Paths.get("src/test/resources/books/FiveWords.txt");
-        FileBasedDictionary dictionary = new FileBasedDictionary(path);
+        Dictionary dictionary = new Dictionary(path);
         Assert.assertTrue(dictionary.contains("aardvark"));
         Assert.assertTrue(dictionary.contains("bat"));
         Assert.assertTrue(dictionary.contains("cat"));

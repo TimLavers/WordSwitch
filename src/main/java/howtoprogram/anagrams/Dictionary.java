@@ -11,10 +11,10 @@ import java.util.Set;
  * Checks words for inclusion in a list of words read from a file.
  * The file format is one word per line.
  */
-public class FileBasedDictionary {
+public class Dictionary {
     private Set<String> words = new HashSet<>();
 
-    public FileBasedDictionary(Path pathToFile) throws IOException {
+    public Dictionary(Path pathToFile) throws IOException {
         List<String> lines = Files.readAllLines(pathToFile);
         for (String line : lines) {
             words.add(line);

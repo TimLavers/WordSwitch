@@ -12,7 +12,7 @@ public class PalindromeFinder {
     public static void main(String[] args) throws IOException {
         //Create a dictionary from the "english.txt" file in resources/books
         Path path = Paths.get("src/main/resources/books/english.txt");
-        FileBasedDictionary dictionary = new FileBasedDictionary(path);
+        Dictionary dictionary = new Dictionary(path);
         //For each string in the dictionary...
         for (String string : dictionary.allWords()) {
             //...create a Word from the string...
