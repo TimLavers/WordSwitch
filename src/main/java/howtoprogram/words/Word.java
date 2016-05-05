@@ -1,4 +1,4 @@
-package howtoprogram.anagrams;
+package howtoprogram.words;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package howtoprogram.anagrams;
+package howtoprogram.words;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 import java.util.Set;
 
 /**
- * Finds the anagrams of a word.
+ * Finds the words of a word.
  */
 public class AnagramFinder {
 

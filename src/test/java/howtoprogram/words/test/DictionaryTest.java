@@ -1,7 +1,7 @@
-package howtoprogram.anagrams.test;
+package howtoprogram.words.test;
 
 
-import howtoprogram.anagrams.Dictionary;
+import howtoprogram.words.Dictionary;
 import org.junit.Assert;
 import org.junit.Test;
 

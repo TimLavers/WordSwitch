@@ -1,4 +1,4 @@
-package howtoprogram.anagrams;
+package howtoprogram.words;
 
 import java.io.IOException;
 import java.nio.file.Files;
