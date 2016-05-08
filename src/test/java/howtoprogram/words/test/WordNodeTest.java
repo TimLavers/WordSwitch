@@ -19,7 +19,7 @@ public class WordNodeTest {
         Assert.assertTrue(wordNode.variantsByOneLetter(checker).isEmpty());
     }
 
-    private WordChecker getWordChecker() throws IOException {
+    private static WordChecker getWordChecker() throws IOException {
         Path path = Paths.get("src/test/resources/books/abcd.txt");
         Dictionary dictionary = new Dictionary(path);
         return new WordChecker(dictionary);
