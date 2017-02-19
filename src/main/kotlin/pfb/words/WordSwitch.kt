@@ -1,6 +1,9 @@
 package pfb.words
 
-class WordSwitch(dictionary: Dictionary, start: String, val toFind: String) {
+/**
+ * Implements the Word Switch algorithm.
+ */
+class WordSwitch(dictionary: Dictionary, start: String, val target: String) {
 
     val startNode: WordNode
     val checker: WordChecker

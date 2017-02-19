@@ -8,5 +8,4 @@ data class WordNode(val text: String) {
         val result = mutableListOf<WordNode>()
         return result
     }
-
 }
