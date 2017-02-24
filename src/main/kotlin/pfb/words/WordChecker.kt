@@ -6,9 +6,16 @@ package pfb.words
  */
 class WordChecker(val dictionary: Dictionary) {
 
-    val wordsSoFar = mutableSetOf<String>();
+    val wordsSoFar = mutableSetOf<String>()
 
-    fun isPreviouslyUnseenValidWord(string: String): Boolean {
-        return false;
+fun isPreviouslyUnseenValidWord(string: String): Boolean {
+    if (!dictionary.contains(string)) {
+        return false
     }
+    if (wordsSoFar.contains(string)) {
+        return false
+    }
+    wordsSoFar.add(string)
+    return true
+}
 }
