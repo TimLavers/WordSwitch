@@ -15,17 +15,17 @@ data class WordNode(val text: String) {
         return result
     }
 
-private fun addVariantsAtPosition(position: Int, nodes: MutableList<WordNode>, checker: WordChecker) {
-    val textBeforePosition = text.substring(0, position)
-    val textAfterPosition = if (text.length > 1) text.substring(position + 1, text.length) else ""
-    val originalLetter = text[position]
-    for (fromAlphabet in "abcdefghijklmnopqrstuvwxyz") {
-        if (originalLetter != fromAlphabet) {
-            val variant = textBeforePosition + fromAlphabet + textAfterPosition
-            if (checker.isPreviouslyUnseenValidWord(variant)) {
-                nodes.add(WordNode(variant))
+    private fun addVariantsAtPosition(position: Int, nodes: MutableList<WordNode>, checker: WordChecker) {
+        val textBeforePosition = text.substring(0, position)
+        val textAfterPosition = if (text.length > 1) text.substring(position + 1, text.length) else ""
+        val originalLetter = text[position]
+        for (fromAlphabet in "abcdefghijklmnopqrstuvwxyz") {
+            if (originalLetter != fromAlphabet) {
+                val variant = textBeforePosition + fromAlphabet + textAfterPosition
+                if (checker.isPreviouslyUnseenValidWord(variant)) {
+                    nodes.add(WordNode(variant))
+                }
             }
         }
     }
-}
 }
