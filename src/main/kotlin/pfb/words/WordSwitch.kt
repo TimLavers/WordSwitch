@@ -1,5 +1,29 @@
 package pfb.words
 
+import java.nio.file.Paths
+
+fun main(args: Array<String>) {
+    //Load the dictionary.
+    val path = Paths.get("src/main/resources/books/english.txt")
+    val dictionary = Dictionary(path)
+    //Create a WordSwitch to look for a path from "swine" to "whale".
+    val wordSwitch = WordSwitch(dictionary, "swine", "whale")
+    //Calculate the target node.
+    val target = wordSwitch.lookForTarget()
+    if (target == null) {
+        //If the target is null, print out that the word
+        //could not be reached.
+        println("Could not reach target.")
+    } else {
+        //Else retrieve the path from the root to the
+        //target and print it out.
+        val fromRoot = target.rootPath()
+        for (wordNode in fromRoot) {
+            println(wordNode.text)
+        }
+    }
+}
+
 /**
  * Implements the Word Switch algorithm.
  */
