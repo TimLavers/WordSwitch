@@ -3,7 +3,7 @@ package pfb.words
 /**
  * Generates one-letter variants of a word.
  */
-data class WordNode(val text: String) {
+data class WordNode(val text: String, val parent: WordNode? = null) {
     fun variantsByOneLetter(checker: WordChecker): List<WordNode> {
         val result = mutableListOf<WordNode>()
         //For each position in the word...
@@ -23,7 +23,7 @@ data class WordNode(val text: String) {
             if (originalLetter != fromAlphabet) {
                 val variant = textBeforePosition + fromAlphabet + textAfterPosition
                 if (checker.isPreviouslyUnseenValidWord(variant)) {
-                    nodes.add(WordNode(variant))
+                    nodes.add(WordNode(variant, this))
                 }
             }
         }
