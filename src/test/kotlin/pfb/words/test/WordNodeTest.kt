@@ -26,19 +26,19 @@ class WordNodeTest {
         Assert.assertTrue(generated.contains(WordNode("d")))
     }
 
-    @Test
-    fun testTwoLetterWord() {
-        val checker = wordChecker()
-        val nodeA = WordNode("ab")
-        val generated = nodeA.variantsByOneLetter(checker)
-        Assert.assertEquals(6, generated.size.toLong())
-        Assert.assertTrue(generated.contains(WordNode("aa")))
-        Assert.assertTrue(generated.contains(WordNode("ac")))
-        Assert.assertTrue(generated.contains(WordNode("ad")))
-        Assert.assertTrue(generated.contains(WordNode("bb")))
-        Assert.assertTrue(generated.contains(WordNode("cb")))
-        Assert.assertTrue(generated.contains(WordNode("db")))
-    }
+@Test
+fun testTwoLetterWord() {
+    val checker = wordChecker()
+    val nodeA = WordNode("ab")
+    val generated = nodeA.variantsByOneLetter(checker)
+    Assert.assertEquals(6, generated.size.toLong())
+    Assert.assertTrue(generated.contains(WordNode("aa")))
+    Assert.assertTrue(generated.contains(WordNode("ac")))
+    Assert.assertTrue(generated.contains(WordNode("ad")))
+    Assert.assertTrue(generated.contains(WordNode("bb")))
+    Assert.assertTrue(generated.contains(WordNode("cb")))
+    Assert.assertTrue(generated.contains(WordNode("db")))
+}
 
     private fun wordChecker(): WordChecker {
         val path = Paths.get("src/test/resources/books/abcd.txt")
