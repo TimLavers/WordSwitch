@@ -15,6 +15,16 @@ data class WordNode(val text: String, val parent: WordNode? = null) {
         return result
     }
 
+    fun rootPath(): List<WordNode> {
+        val result = mutableListOf<WordNode>()
+        if (parent != null) {
+            val parentRootPath = parent.rootPath()
+            result.addAll(parentRootPath)
+        }
+        result.add(this)
+        return result
+    }
+
     private fun addVariantsAtPosition(position: Int, nodes: MutableList<WordNode>, checker: WordChecker) {
         val textBeforePosition = text.substring(0, position)
         val textAfterPosition = if (text.length > 1) text.substring(position + 1, text.length) else ""
