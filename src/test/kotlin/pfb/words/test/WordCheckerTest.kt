@@ -15,12 +15,12 @@ class WordCheckerTest {
         Assert.assertFalse(checker.isPreviouslyUnseenValidWord("aardworlff"))
     }
 
-@Test
-fun validWordTest() {
-    val path = Paths.get("src/test/resources/books/FiveWords.txt")
-    val dictionary = Dictionary(path)
-    val checker = WordChecker(dictionary)
-    Assert.assertTrue(checker.isPreviouslyUnseenValidWord("bat"))
-    Assert.assertFalse(checker.isPreviouslyUnseenValidWord("bat"))
-}
+    @Test
+    fun validWordTest() {
+        val path = Paths.get("src/test/resources/books/FiveWords.txt")
+        val dictionary = Dictionary(path)
+        val checker = WordChecker(dictionary)
+        Assert.assertTrue(checker.isPreviouslyUnseenValidWord("bat"))
+        Assert.assertFalse(checker.isPreviouslyUnseenValidWord("bat"))
+    }
 }
