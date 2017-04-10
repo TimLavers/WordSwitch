@@ -1,5 +1,7 @@
 package pfb.words
 
+import java.nio.file.Paths
+
 /**
  * Implements the Word Switch algorithm.
  */
